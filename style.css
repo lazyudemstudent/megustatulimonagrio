@@ -1,0 +1,330 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  color: #222;
+  font: 15px/1.45 Arial, sans-serif;
+}
+
+a {
+  color: #214f72;
+}
+
+.skip {
+  position: absolute;
+  top: -100px;
+  background: #fff;
+  padding: 12px;
+  z-index: 10;
+}
+
+.skip:focus {
+  top: 0;
+}
+
+.shell {
+  display: grid;
+  grid-template-columns: 225px minmax(0, 1fr);
+  max-width: 1280px;
+  min-height: 100vh;
+  margin: auto;
+}
+
+aside {
+  padding: 25px 18px;
+  background: #f3f3f3;
+  border-right: 1px solid #bbb;
+}
+
+.brand {
+  margin: 0 0 5px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+aside small {
+  font-size: 14px;
+  color: #444;
+}
+
+nav {
+  display: grid;
+  gap: 5px;
+  margin-top: 25px;
+}
+
+nav a {
+  display: block;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  color: #222;
+  text-decoration: none;
+}
+
+nav a:hover {
+  background: #e6e6e6;
+}
+
+nav a[aria-current] {
+  background: #ddd;
+  border-color: #aaa;
+  font-weight: bold;
+}
+
+main {
+  padding: 25px 30px;
+  min-width: 0;
+}
+
+header {
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #bbb;
+}
+
+h1 {
+  margin: 0;
+  font-size: 22px;
+}
+
+h2 {
+  margin: 0 0 12px;
+  font-size: 20px;
+}
+
+h3 {
+  margin: 0 0 16px;
+  font-size: 17px;
+}
+
+.home {
+  max-width: 720px;
+}
+
+.home > p {
+  margin: 0 0 24px;
+}
+
+.module-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid #bbb;
+}
+
+.module-links li {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  gap: 18px;
+  padding: 18px 6px;
+  border-bottom: 1px solid #bbb;
+}
+
+.module-links a {
+  font-weight: bold;
+}
+
+.panel {
+  border: 1px solid #bbb;
+  padding: 20px;
+  margin: 18px 0;
+}
+
+.fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 15px;
+  margin-bottom: 18px;
+}
+
+label {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+input, select {
+  width: 100%;
+  min-width: 0;
+  border: 1px solid #888;
+  border-radius: 2px;
+  padding: 9px 10px;
+  background: #fff;
+  font: inherit;
+  color: #222;
+}
+
+button {
+  padding: 10px 16px;
+  background: #305774;
+  color: #fff;
+  border: 1px solid #305774;
+  border-radius: 2px;
+  font: bold 14px Arial, sans-serif;
+  cursor: pointer;
+}
+
+button.secondary {
+  padding: 7px 10px;
+  background: #fff;
+  color: #214f72;
+  margin: 2px;
+}
+
+button:hover {
+  filter: brightness(.92);
+}
+
+:focus-visible {
+  outline: 3px solid #2b74a6;
+  outline-offset: 3px;
+}
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: left;
+  font-size: 14px;
+}
+
+th, td {
+  padding: 10px;
+  border: 1px solid #bbb;
+  vertical-align: middle;
+}
+
+th {
+  background: #eee;
+  font-weight: bold;
+}
+
+td {
+  overflow-wrap: anywhere;
+}
+
+td select {
+  min-width: 130px;
+}
+
+.empty {
+  text-align: center;
+  color: #555;
+}
+
+.muted {
+  font-size: 13px;
+  color: #444;
+}
+
+.toolbar {
+  max-width: 420px;
+  margin-bottom: 18px;
+}
+
+.notice:empty {
+  display: none;
+}
+
+.notice {
+  padding: 12px;
+  margin: 12px 0;
+  border: 1px solid #999;
+}
+
+.success {
+  background: #eff5ef;
+  color: #264b2b;
+}
+
+.error {
+  background: #fff2ef;
+  color: #7a251c;
+}
+
+.tag {
+  display: inline-block;
+  border: 1px solid #aaa;
+  padding: 2px 6px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.warn {
+  font-weight: bold;
+  background: #fff4db;
+}
+
+.summary {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 14px 0;
+}
+
+.summary span {
+  padding: 8px 10px;
+  background: #eee;
+  border: 1px solid #bbb;
+}
+
+@media (max-width: 850px) {
+  .shell {
+    grid-template-columns: 190px minmax(0, 1fr);
+  }
+  aside {
+    padding: 22px 12px;
+  }
+  main {
+    padding: 22px 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .shell {
+    display: block;
+  }
+  aside {
+    padding: 16px;
+    border-right: 0;
+    border-bottom: 1px solid #bbb;
+  }
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
+    margin-top: 15px;
+  }
+  nav a {
+    font-size: 13px;
+    padding: 8px;
+  }
+  main {
+    padding: 20px 16px;
+  }
+  .fields {
+    grid-template-columns: 1fr;
+  }
+  .panel {
+    padding: 15px;
+  }
+  .module-links li {
+    grid-template-columns: 1fr;
+    gap: 5px;
+    padding: 15px 5px;
+  }
+  th, td {
+    padding: 9px 7px;
+  }
+  table {
+    min-width: 460px;
+  }
+}
